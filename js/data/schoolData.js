@@ -133,7 +133,7 @@ export const MATRICULAS = {
 
 /* --------------------------------------------------------------------------
    MURAL — bento grid da página inicial
-   (notícias, avisos, calendário do mês, serviços e fotos)
+   (notícias, avisos, calendário do mês, Instagram e fotos)
    -------------------------------------------------------------------------- */
 export const MURAL = {
   // mes: 0-based (8 = setembro)
@@ -175,13 +175,13 @@ export const MURAL = {
     { dia: 25, titulo: 'Reunião de pais — Infantil' },
     { dia: 30, titulo: 'Entrega de boletins' },
   ],
-  servicos: [
-    { nome: 'Biblioteca', icone: 'book-open' },
-    { nome: 'Calendário', icone: 'calendar' },
-    { nome: 'Portal do Aluno', icone: 'user-round' },
-    { nome: 'Secretaria', icone: 'clipboard-list' },
-    { nome: 'Refeitório', icone: 'utensils' },
-  ],
+  instagram: {
+    titulo: 'Siga-nos no Instagram',
+    descricao:
+      'Acompanhe a rotina, eventos e avisos do Centro Educacional Formando Vidas em tempo real.',
+    cta: 'Ver Perfil no Instagram',
+    link: 'https://www.instagram.com/c.educacionalformandovidas',
+  },
   fotos: [
     { src: 'assets/img/aluna-bandeira-brasil.jpeg', alt: 'Aluna segurando a bandeira do Brasil' },
     { src: 'assets/img/alunos-comendo.jpeg', alt: 'Alunos no refeitório durante o lanche' },

@@ -1,7 +1,7 @@
 /* ==========================================================================
    Mural — bento grid dinâmico da página inicial
-   Notícias em destaque, avisos rápidos, calendário do mês, serviços
-   (Biblioteca, Calendário, Portal do Aluno, Secretaria, Refeitório) e fotos.
+   Notícias em destaque, avisos rápidos, calendário do mês, card promocional
+   do Instagram e fotos.
    ========================================================================== */
 
 import { MURAL } from '../data/schoolData.js';
@@ -75,17 +75,20 @@ export function renderMural() {
       ${buildCalendar()}
     </article>
 
-    <article class="mural-card mural-servicos" data-motion="card">
-      <h3 class="mural-card-title"><i data-lucide="layout-grid"></i> Serviços</h3>
-      <ul class="mural-servicos-list">
-        ${MURAL.servicos
-          .map(
-            (s) => `
-          <li><i data-lucide="${s.icone}"></i><span>${s.nome}</span></li>
-        `
-          )
-          .join('')}
-      </ul>
+    <article class="mural-card mural-instagram" data-motion="card">
+      <div class="mural-instagram-icon"><i data-lucide="instagram"></i></div>
+      <h3 class="mural-instagram-title">${MURAL.instagram.titulo}</h3>
+      <p>${MURAL.instagram.descricao}</p>
+      <a
+        class="btn btn--instagram"
+        href="${MURAL.instagram.link}"
+        target="_blank"
+        rel="noopener"
+        data-motion="cta"
+      >
+        <i data-lucide="instagram"></i>
+        ${MURAL.instagram.cta}
+      </a>
     </article>
 
     <article class="mural-card mural-noticias" data-motion="card">
