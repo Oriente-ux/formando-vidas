@@ -94,7 +94,7 @@ function normalize(results, today) {
     if (validade && validade < today) continue;
 
     const categoria = norm(propSelect(page, ['categoria']));
-    const titulo = propText(page, ['titulo', 'título']);
+    const titulo = propText(page, ['titulo', 'título', 'name', 'nome']);
     const texto = propText(page, ['texto']);
     const dataEvento = propDate(page, ['data_evento', 'data do evento']);
 
