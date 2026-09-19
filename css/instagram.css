@@ -1,0 +1,87 @@
+/* ==========================================================================
+   Card promocional do Instagram — Mural (bento grid)
+   Carregado após css/styles.css; substitui a área "servicos" do grid.
+   ========================================================================== */
+
+/* Card Instagram (substitui o card de Serviços) */
+.mural-instagram {
+  background: linear-gradient(135deg, #f9ce34 0%, #ee2a7b 55%, #6228d7 100%);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.7rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.mural-instagram::after {
+  content: '';
+  position: absolute;
+  top: -40%;
+  right: -18%;
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  pointer-events: none;
+}
+
+.mural-instagram-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 15px;
+  background: #fff;
+  display: grid;
+  place-items: center;
+  color: #ee2a7b;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  z-index: 1;
+}
+
+.mural-instagram-icon svg { width: 27px; height: 27px; }
+
+.mural-instagram-title {
+  font-size: 1.05rem;
+  color: #fff;
+  margin-bottom: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.mural-instagram p {
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 0.92rem;
+  line-height: 1.5;
+  position: relative;
+  z-index: 1;
+}
+
+.btn--instagram {
+  width: 100%;
+  background: #fff;
+  color: #c13584;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+  position: relative;
+  z-index: 1;
+  margin-top: auto;
+  white-space: normal;
+  text-align: center;
+  padding: 0.8rem 1rem;
+  font-size: 0.9rem;
+}
+
+.btn--instagram:hover { background: #f7f7f7; }
+
+/* Bento: desktop — troca a área "servicos" por "instagram" */
+@media (min-width: 900px) {
+  .mural-grid {
+    grid-template-areas:
+      'destaque destaque avisos calendario'
+      'destaque destaque instagram noticias'
+      'fotos fotos fotos fotos';
+  }
+
+  .mural-instagram { grid-area: instagram; }
+}
