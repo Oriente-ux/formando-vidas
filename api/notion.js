@@ -106,7 +106,9 @@ function normalize(results, today) {
         eventos.push({ dia, titulo: titulo || texto || 'Evento', data: dataEvento });
       }
     } else {
-      avisos.push({ texto: texto || titulo, icone: 'bell' });
+      const avisoTexto = texto || titulo;
+      if (!avisoTexto) continue; // linha vazia/placeholder não vira aviso
+      avisos.push({ texto: avisoTexto, icone: 'bell' });
     }
   }
 
