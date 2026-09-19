@@ -108,10 +108,16 @@ function normalize(results, today) {
     } else {
       const avisoTexto = texto || titulo;
       if (!avisoTexto) continue; // linha vazia/placeholder não vira aviso
-      avisos.push({ texto: avisoTexto, icone: 'bell' });
+      avisos.push({ texto: avisoTexto, icone: 'bell', validade });
     }
   }
 
+  // Avisos: mais urgentes primeiro (sem validade ficam por último)
+  avisos.sort((a, b) => {
+    const va = a.validade || '9999-12-31';
+    const vb = b.validade || '9999-12-31';
+    return va < vb ? -1 : 1;
+  });
   eventos.sort((a, b) => (a.data < b.data ? -1 : 1));
   return { avisos, eventos };
 }
