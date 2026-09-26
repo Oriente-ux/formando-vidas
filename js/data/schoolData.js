@@ -180,7 +180,7 @@ export const MURAL = {
     descricao:
       'Acompanhe a rotina, eventos e avisos do Centro Educacional Formando Vidas em tempo real.',
     cta: 'Ver Perfil no Instagram',
-    link: 'https://www.instagram.com/c.educacionalformandovidas',
+    link: 'https://www.instagram.com/ceformandovidas/',
   },
   fotos: [
     { src: 'assets/img/aluna-bandeira-brasil.jpeg', alt: 'Aluna segurando a bandeira do Brasil' },
