@@ -49,7 +49,6 @@
 
   <!-- Estilos -->
   <link rel="stylesheet" href="css/styles.css" />
-  <link rel="stylesheet" href="css/instagram.css" />
 
   <!-- Dados estruturados (SEO local) -->
   <script type="application/ld+json">
@@ -144,17 +143,7 @@
 
   <!-- Segurança: se o app.js não carregar (ex.: CDN indisponível ou file://),
        garante que o preloader nunca bloqueie a página. -->
-  <script>
-    (function () {
-      setTimeout(function () {
-        var p = document.getElementById('preloader');
-        if (p && !p.classList.contains('is-done')) {
-          p.classList.add('is-done');
-          document.body.classList.add('is-loaded');
-        }
-      }, 5000);
-    })();
-  </script>
+  <script src="js/fallback.js"></script>
 </head>
 
 <body>
@@ -540,19 +529,6 @@
       <figcaption></figcaption>
     </figure>
   </div>
-
-  <!-- Aviso ao abrir o arquivo direto (file://): módulos ES6 exigem servidor HTTP -->
-  <script>
-    if (location.protocol === 'file:') {
-      var n = document.createElement('div');
-      n.setAttribute('role', 'note');
-      n.style.cssText =
-        'position:fixed;left:1rem;right:1rem;bottom:1rem;z-index:9999;background:#7f1d1d;color:#fff;padding:0.9rem 1.1rem;border-radius:12px;font:600 0.9rem/1.4 system-ui,sans-serif;box-shadow:0 8px 24px rgba(0,0,0,.35)';
-      n.textContent =
-        'Aviso: abra este site por um servidor local (ex.: http://127.0.0.1:8123) para que as animações e o 3D funcionem.';
-      document.body.appendChild(n);
-    }
-  </script>
 
   <!-- App -->
   <script type="module" src="js/app.js"></script>
